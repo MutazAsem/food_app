@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Food App',
+      title: 'Our Food App',
       debugShowCheckedModeBanner: false,
       home: SignInScreen(),
     );
