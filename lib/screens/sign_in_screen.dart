@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/constants/app_colors.dart';
-import 'package:food_app/custom_widget/custom_button.dart';
 import 'package:food_app/screens/home_screen.dart';
+import 'package:food_app/widgets/custom_button.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});

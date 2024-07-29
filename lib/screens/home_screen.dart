@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/constants/app_colors.dart';
-import 'package:food_app/custom_widget/custom_card_product.dart';
+import 'package:food_app/widgets/custom_card_product.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/custom_square_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -42,102 +44,14 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: AppColors.kPrimaryColor,
-                ),
-                child: const Padding(
-                  padding:
-                      EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '50%',
-                            style: TextStyle(
-                              fontSize: 42,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'off',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.kWhite,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text('on all sushi orders*'),
-                      Text('Valid till 25 Dec,2023'),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          '*Terms and conditions applied',
-                          style:
-                              TextStyle(color: AppColors.kWhite, fontSize: 7),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: AppColors.kPrimaryColor,
-                ),
-                child: const Padding(
-                  padding:
-                      EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '50%',
-                            style: TextStyle(
-                              fontSize: 42,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'off',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: AppColors.kWhite,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text('on all sushi orders*'),
-                      Text('Valid till 25 Dec,2023'),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Text(
-                          '*Terms and conditions applied',
-                          style:
-                              TextStyle(color: AppColors.kWhite, fontSize: 7),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              CustomSquareCard(),
+              CustomSquareCard(),
             ],
           ),
           const SizedBox(height: 10),
           Container(
+            height: 138,
+            width: 358,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               color: Color(0xff333333),
