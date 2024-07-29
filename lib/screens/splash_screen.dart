@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/sign_in_screen.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/app_images.dart';
@@ -9,6 +12,11 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => SignInScreen(),
+      ));
+    });
     return Scaffold(
       backgroundColor: AppColors.kPrimaryColor,
       body: Stack(

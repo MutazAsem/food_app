@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/constants/app_colors.dart';
 import 'package:food_app/custom_widget/custom_button.dart';
+import 'package:food_app/screens/home_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -40,8 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
         backgroundColor: AppColors.kPrimaryColor,
         body: Padding(
           padding: const EdgeInsets.only(left: 40.0, right: 40.0, top: 75),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,7 +205,11 @@ class _SignInScreenState extends State<SignInScreen> {
               CustomButton(
                 backgroundColor: Colors.black,
                 text: 'Sign in ',
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ));
+                },
                 textColor: Colors.white,
               ),
               SizedBox(
