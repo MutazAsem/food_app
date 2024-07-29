@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               CustomSquareCard(),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 26),
           Container(
             height: 138,
             width: 358,
@@ -57,22 +57,22 @@ class HomeScreen extends StatelessWidget {
               color: Color(0xff333333),
             ),
             child: Padding(
-              padding:
-                  EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Use code \niLovemyfood \nto get 10% off on your orders',
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(color: Colors.red, letterSpacing: .5),
-                  ),
+              padding: const EdgeInsets.only(
+                  left: 25, right: 58, top: 33, bottom: 33),
+              child: Text(
+                'Use code \niLovemyfood \nto get 10% off on your orders',
+                style: GoogleFonts.lato(
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 35),
           const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
                 'Foods',
@@ -81,27 +81,28 @@ class HomeScreen extends StatelessWidget {
                   color: AppColors.kPrimaryColor,
                   decoration: TextDecoration.underline,
                   decorationColor: AppColors.kPrimaryColor,
+                  decorationThickness: 3,
                 ),
               ),
               Text(
                 'Drinks',
                 style: TextStyle(
                   fontSize: 17,
-                  color: Colors.black,
+                  color: Color(0xff9A9A9D),
                 ),
               ),
               Text(
                 'Snacks',
                 style: TextStyle(
                   fontSize: 17,
-                  color: Colors.black,
+                  color: Color(0xff9A9A9D),
                 ),
               ),
               Text(
                 'Sauce',
                 style: TextStyle(
                   fontSize: 17,
-                  color: Colors.black,
+                  color: Color(0xff9A9A9D),
                 ),
               ),
             ],
@@ -109,31 +110,6 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 120,
           ),
-
-          /// ListView with shrinkWrap ,  scrollDirection: Axis.horizontal
-          // SizedBox(
-          //   height: 300,
-          //   child: ListView(
-          //     scrollDirection: Axis.horizontal,
-          //     shrinkWrap: true,
-          //     children: [
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //         children: [
-          //           CustomCardProduct(image: 'assets/images/spaghetti.png'),
-          //           const SizedBox(
-          //             width: 15,
-          //           ),
-          //           CustomCardProduct(image: 'assets/images/spaghetti.png'),
-          //           const SizedBox(
-          //             width: 15,
-          //           ),
-          //           CustomCardProduct(image: 'assets/images/spaghetti.png'),
-          //         ],
-          //       )
-          //     ],
-          //   ),
-          // ),
 
           /// ListView.builder , itemCount , itemBuilder
           SizedBox(
