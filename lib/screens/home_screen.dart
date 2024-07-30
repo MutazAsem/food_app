@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Image.asset('assets/icons/drawer.png'),
         title: Container(
           height: 35,
           decoration: BoxDecoration(
@@ -26,12 +25,17 @@ class HomeScreen extends StatelessWidget {
                 focusedBorder: InputBorder.none,
                 prefixIcon: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.search,
                       color: Colors.black,
-                    ))),
+                    )),
+                label: Text(
+                  'Search',
+                  style: TextStyle(fontSize: 17, color: Colors.black),
+                )),
           ),
         ),
+        leading: Image.asset('assets/icons/drawer.png'),
         actions: [Image.asset('assets/icons/person.png')],
       ),
       body: SingleChildScrollView(

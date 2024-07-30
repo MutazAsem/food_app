@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:food_app/screens/cart_screen.dart';
+import 'package:food_app/screens/home_screen.dart';
+
+class BaseScreen extends StatefulWidget {
+  const BaseScreen({super.key});
+
+  @override
+  State<BaseScreen> createState() => _BaseScreenState();
+}
+
+class _BaseScreenState extends State<BaseScreen> {
+  int selectIndex = 0;
+
+  List screen = [
+    HomeScreen(),
+    CartScreen(),
+    CartScreen(),
+  ];
+
+  // واحده من الطرق لعرض الشاشة في body
+  // screen.elementAt(selectIndex)
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: screen[selectIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Image.asset('assets/icons/home.png'), label: ''),
+          BottomNavigationBarItem(
+              icon: Image.asset('assets/icons/cart.png'), label: ''),
+          BottomNavigationBarItem(
+              icon: Image.asset('assets/icons/favarite.png'), label: ''),
+        ],
+        onTap: (value) {
+          setState(() {
+            selectIndex = value;
+          });
+        },
+      ),
+    );
+  }
+}
