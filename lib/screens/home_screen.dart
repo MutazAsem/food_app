@@ -20,20 +20,16 @@ class HomeScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
             color: Colors.grey[300],
           ),
-          child: const Row(
-            children: [
-              SizedBox(
-                width: 10,
-              ),
-              Icon(Icons.search),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                'Search',
-                style: TextStyle(fontSize: 17),
-              ),
-            ],
+          child: TextField(
+            decoration: InputDecoration(
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                prefixIcon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                    ))),
           ),
         ),
         actions: [Image.asset('assets/icons/person.png')],
