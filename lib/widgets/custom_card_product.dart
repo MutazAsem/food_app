@@ -6,53 +6,66 @@ class CustomCardProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Container(
-              width: 160,
-              height: 180,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned(
+            top: 40,
+            child: Card(
+              elevation: 5,
+              shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide.none,
               ),
-            ),
-            Positioned(
-              top: -60,
-              left: -15,
-              child: Image.asset(
-                image,
-                height: 200,
+              child: Container(
                 width: 200,
+                height: 241.4,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
               ),
             ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 90.0, left: 20),
-          child: Column(
-            children: [
-              Text(
-                'Spicy Salmon',
-                style: TextStyle(
+          ),
+          Positioned(
+            bottom: 70,
+            left: -10,
+            child: Image.asset(
+              image,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 130.0, left: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Spicy Salmon',
+                  style: TextStyle(
                     fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'Rs.199',
-                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Rs.199',
+                  style: TextStyle(
                     fontSize: 20,
                     color: Color(0xffFF470B),
-                    fontWeight: FontWeight.w400),
-              ),
-              Text('4.4/5'),
-            ],
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Text('4.4/5'),
+              ],
+            ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

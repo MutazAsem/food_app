@@ -38,103 +38,96 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [Image.asset('assets/icons/person.png')],
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              CustomSquareCard(),
-              CustomSquareCard(),
-            ],
-          ),
-          const SizedBox(height: 26),
-          Container(
-            height: 138,
-            width: 358,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Color(0xff333333),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomSquareCard(),
+                CustomSquareCard(),
+              ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 25, right: 58, top: 33, bottom: 33),
-              child: Text(
-                'Use code \niLovemyfood \nto get 10% off on your orders',
-                style: GoogleFonts.lato(
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 17),
+            const SizedBox(height: 26),
+            Container(
+              height: 138,
+              width: 358,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Color(0xff333333),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 25, right: 58, top: 33, bottom: 33),
+                child: Text(
+                  'Use code \niLovemyfood \nto get 10% off on your orders',
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 17),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 35),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                'Foods',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: AppColors.kPrimaryColor,
-                  decoration: TextDecoration.underline,
-                  decorationColor: AppColors.kPrimaryColor,
-                  decorationThickness: 3,
+            const SizedBox(height: 35),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  'Foods',
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: AppColors.kPrimaryColor,
+                    decoration: TextDecoration.underline,
+                    decorationColor: AppColors.kPrimaryColor,
+                    decorationThickness: 3,
+                  ),
                 ),
-              ),
-              Text(
-                'Drinks',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Color(0xff9A9A9D),
+                Text(
+                  'Drinks',
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Color(0xff9A9A9D),
+                  ),
                 ),
-              ),
-              Text(
-                'Snacks',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Color(0xff9A9A9D),
+                Text(
+                  'Snacks',
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Color(0xff9A9A9D),
+                  ),
                 ),
-              ),
-              Text(
-                'Sauce',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Color(0xff9A9A9D),
+                Text(
+                  'Sauce',
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Color(0xff9A9A9D),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 120,
-          ),
-
-          /// ListView.builder , itemCount , itemBuilder
-          SizedBox(
-            height: 300,
-            child: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomCardProduct(image: 'assets/images/spaghetti.png'),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                  ],
-                );
-              },
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
+              ],
             ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-        ],
+            const SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              height: 300,
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return CustomCardProduct(
+                      image: 'assets/images/spaghetti.png');
+                },
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
       ),
     );
   }
