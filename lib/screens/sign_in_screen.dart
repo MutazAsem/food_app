@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/constants/app_colors.dart';
-import 'package:food_app/screens/base.dart';
 import 'package:food_app/widgets/custom_button.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -204,9 +203,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   text: 'Sign in ',
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => BaseScreen(),
-                      ));
+                      Navigator.pushNamed(context, 'base_screen');
+                      // Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      //   builder: (context) => BaseScreen(),
+                      // ));
                     }
                   },
                   textColor: Colors.white,

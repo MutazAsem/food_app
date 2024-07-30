@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/cart_screen.dart';
 import 'package:food_app/screens/home_screen.dart';
+import 'package:food_app/screens/image_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
@@ -16,6 +17,7 @@ class _BaseScreenState extends State<BaseScreen> {
     HomeScreen(),
     CartScreen(),
     CartScreen(),
+    ImageScreen(),
   ];
 
   // واحده من الطرق لعرض الشاشة في body
@@ -33,6 +35,12 @@ class _BaseScreenState extends State<BaseScreen> {
               icon: Image.asset('assets/icons/cart.png'), label: ''),
           BottomNavigationBarItem(
               icon: Image.asset('assets/icons/favarite.png'), label: ''),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.image,
+                color: Colors.black,
+              ),
+              label: ''),
         ],
         onTap: (value) {
           setState(() {

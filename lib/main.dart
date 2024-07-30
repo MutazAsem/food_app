@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/screens/sign_in_screen.dart';
+import 'package:food_app/screens/base.dart';
 import 'package:food_app/screens/splash_screen.dart';
 
 void main() {
@@ -11,10 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Our Food App',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      // home: const SplashScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        'base_screen': (context) => const BaseScreen(),
+      },
     );
   }
 }
