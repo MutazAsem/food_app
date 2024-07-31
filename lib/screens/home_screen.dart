@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/constants/app_colors.dart';
+import 'package:food_app/constants/app_images.dart';
+import 'package:food_app/model/product_model.dart';
 import 'package:food_app/widgets/custom_card_product.dart';
+import 'package:food_app/widgets/custom_list_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/custom_square_card.dart';
@@ -35,8 +38,33 @@ class HomeScreen extends StatelessWidget {
                 )),
           ),
         ),
-        leading: Image.asset('assets/icons/drawer.png'),
+        // leading: Image.asset('assets/icons/drawer.png'),
         actions: [Image.asset('assets/icons/person.png')],
+      ),
+      drawer: Drawer(
+        backgroundColor: AppColors.kPrimaryColor,
+        child: ListView(
+          children: [
+            DrawerHeader(
+                child: Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back_ios)),
+            )),
+            CustomListTile(image: AppImages.kIconSetting, title: 'Settings'),
+            CustomListTile(
+                image: 'assets/icons/scan_code.png', title: 'Scan Code'),
+            CustomListTile(image: 'assets/icons/wallet.png', title: 'Wallet'),
+            CustomListTile(image: 'assets/icons/offers.png', title: 'Offers'),
+            CustomListTile(image: 'assets/icons/help.png', title: 'Help'),
+            CustomListTile(image: 'assets/icons/help.png', title: 'Help'),
+            CustomListTile(
+                image: 'assets/icons/rate.png', title: 'Rate the app'),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -114,10 +142,14 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 300,
               child: ListView.builder(
-                itemCount: 20,
+                itemCount: productData.length,
                 itemBuilder: (context, index) {
                   return CustomCardProduct(
-                      image: 'assets/images/spaghetti.png');
+                    image: productData[index].image,
+                    title: productData[index].title,
+                    price: productData[index].price,
+                    rate: productData[index].rate,
+                  );
                 },
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,

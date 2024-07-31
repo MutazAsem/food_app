@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app/screens/cart_screen.dart';
 import 'package:food_app/screens/home_screen.dart';
 import 'package:food_app/screens/image_screen.dart';
+import 'package:food_app/screens/order_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
@@ -15,7 +16,7 @@ class _BaseScreenState extends State<BaseScreen> {
 
   List screen = [
     HomeScreen(),
-    CartScreen(),
+    OrderScreen(),
     CartScreen(),
     ImageScreen(),
   ];

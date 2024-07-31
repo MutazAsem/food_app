@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/base.dart';
-import 'package:food_app/screens/image_screen.dart';
+import 'package:food_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       // home: const SplashScreen(),
       initialRoute: '/',
       routes: {
-        '/': (context) => ImageScreen(),
+        '/': (context) => const SplashScreen(),
         'base_screen': (context) => const BaseScreen(),
       },
     );
