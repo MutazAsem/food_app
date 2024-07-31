@@ -1,6 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ImageScreen extends StatefulWidget {
   const ImageScreen({super.key});
@@ -14,19 +14,16 @@ class _ImageScreenState extends State<ImageScreen> {
   Widget build(BuildContext context) {
     // Animation<double>? opacity = (value / 1000).clamp(0, 1);
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Image.network(
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOEXaRAeTmkz7jmJg3n_15Rmbe0ytmGfyZcw&s',
-            width: 250,
-            height: 250,
-            alignment: Alignment.center,
+      body: Center(
+        child: CachedNetworkImage(
+          height: 200,
+          width: 200,
+          imageUrl: 'http://via.placeholder.com/350x150',
+          placeholder: (context, url) => SpinKitWave(
+            color: Colors.red,
+            size: 50.0,
           ),
-          SvgPicture.asset(
-            'assets/svg/Muslim graduation-bro.svg',
-          ),
-        ],
+        ),
       ),
     );
   }
